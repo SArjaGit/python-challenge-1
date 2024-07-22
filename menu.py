@@ -52,11 +52,11 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-
+customers_order = []
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
-customers_order = []
+
 # Customers may want to order multiple items, so let's create a continuous
 # loop
 place_order = True
@@ -166,20 +166,18 @@ while place_order:
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
         
         # 5. Check the customer's input
-        match keep_ordering:
+        match keep_ordering.upper():
             case 'Y':
                 # Keep ordering
                 place_order = True
                  # Exit the keep ordering question loop
-                break
-
-                # Complete the order
+                break               
             case 'N':
-                
+                # Complete the order
+                place_order = False
                 # Since the customer decided to stop ordering, thank them for
                 # their order
                 print("Thank you for your order")
-                place_order = False
                 # Exit the keep ordering question loop
                 break
             case _:
@@ -222,5 +220,5 @@ for order in customers_order:
 order_cost = sum(order["Price"] * order["Quantity"] for order in customers_order)
 # print("Total cost: $", order_cost)
 # and print the prices.
-print(f"Total Bill : ${order_cost}")
+print(f"Total Bill for the order: ${order_cost:.2f}")
  
