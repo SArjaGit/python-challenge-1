@@ -213,7 +213,7 @@ for order in customers_order:
     item_spaces_itemquantity = " " * quantity_spaces
        
     # 10. Print the item name, price, and quantity
-    print(f"{order["Item name"]}{item_spaces_itemname}| ${order["Price"]}{item_spaces_itemprice}| {order["Quantity"]}{item_spaces_itemquantity}")
+    print(f"{order['Item name']}{item_spaces_itemname}| ${order['Price']}{item_spaces_itemprice}| {order['Quantity']}{item_spaces_itemquantity}")
 
 # 11. Calculate the cost of the order using list comprehension
 
